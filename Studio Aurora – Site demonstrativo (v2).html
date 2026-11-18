@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Studio Aurora – Cabelo, unhas e estética</title>
+<meta name="description" content="Studio Aurora: cabelo, unhas e estética por ordem de chegada, de segunda a sábado. Site demonstrativo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe6;--cream2:#efe4d6;--paper:#fffaf3;--ink:#2b1620;--muted:#6f5560;--wine:#5a1a2e;--rose:#b4554f;--gold:#b8955a;--line:#e3d3c0;
+--fd:"Cormorant Garamond",Georgia,serif;--fb:"Jost",system-ui,sans-serif;--sh:0 18px 50px rgba(90,26,46,.12);box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#1d1015;--cream2:#27161d;--paper:#2a1920;--ink:#f6e9e2;--muted:#c6a9ab;--line:#46282f;--wine:#e9b8bd;--rose:#e07f74;--sh:0 18px 50px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--cream:#1d1015;--cream2:#27161d;--paper:#2a1920;--ink:#f6e9e2;--muted:#c6a9ab;--line:#46282f;--wine:#e9b8bd;--rose:#e07f74;--sh:0 18px 50px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 1.0625rem/1.65 var(--fb);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+svg.i{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4rem,9vw,7.5rem) 0}
+.eyebrow{font:500 .78rem var(--fb);letter-spacing:.3em;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:.8rem}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
+h2{font:500 clamp(2.4rem,6vw,4.4rem)/1.02 var(--fd);color:var(--wine);margin:.9rem 0 1rem;letter-spacing:-.01em}
+h2 em{color:var(--rose)}.lead{color:var(--muted);max-width:52ch;font-size:1.1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:52px;padding:.85rem 1.9rem;border-radius:999px;background:var(--wine);color:#fff7ef;font:500 .98rem var(--fb);letter-spacing:.03em;border:1px solid var(--wine);cursor:pointer;transition:transform .25s,background .25s,box-shadow .25s}
+:root[data-theme="dark"] .btn.p{color:#2b1620}
+.btn:hover{transform:translateY(-3px);background:var(--rose);border-color:var(--rose);box-shadow:0 12px 28px rgba(180,85,79,.3)}
+.btn.o{background:transparent;color:var(--wine);border-color:var(--wine)}.btn.o:hover{background:var(--wine);color:var(--cream)}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;padding-top:env(safe-area-inset-top,0px);transition:background .3s,box-shadow .3s}
+header.sc{background:color-mix(in srgb,var(--cream) 90%,transparent);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:.7rem;font:600 1.7rem/1 var(--fd);color:var(--wine)}
+.logo svg{width:34px;height:34px;color:var(--rose)}.logo small{font:500 .6rem var(--fb);letter-spacing:.34em;text-transform:uppercase;display:block;color:var(--gold);margin-bottom:.1rem}
+nav ul{display:flex;gap:2rem}nav a{font-size:.95rem;font-weight:500;position:relative;padding:.3rem 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--rose);transition:width .3s}nav a:hover::after,nav a.on::after{width:100%}
+.hr{display:flex;align-items:center;gap:.7rem}.ib{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--wine);cursor:pointer;display:grid;place-items:center}
+.bg{display:none}
+@media(max-width:900px){.bg{display:grid}.hr .btn{display:none}
+nav ul{position:fixed;inset:calc(76px + env(safe-area-inset-top,0px)) 0 auto;flex-direction:column;gap:0;background:var(--cream);padding:.5rem 1.5rem 1.5rem;box-shadow:var(--sh);transform:translateY(-140%);transition:transform .35s;visibility:hidden}
+nav ul.open{transform:none;visibility:visible}nav li a{display:block;padding:1.1rem 0;border-bottom:1px solid var(--line);font:500 1.5rem var(--fd)}nav a::after{display:none}}
+/* hero */
+.hero{min-height:100svh;padding:calc(76px + 3rem) 0 4rem;display:flex;align-items:center;background:radial-gradient(70% 60% at 82% 30%,var(--cream2),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center}
+.hero h1{font:500 clamp(3.6rem,10.5vw,8.2rem)/.9 var(--fd);color:var(--wine);letter-spacing:-.03em;margin:1.2rem 0 1.4rem}
+.hero h1 em{display:block;font-size:.42em;letter-spacing:0;margin-top:.7rem;color:var(--rose);line-height:1.05}
+.hero .btns{display:flex;flex-wrap:wrap;gap:.8rem;margin:2rem 0 2.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}.chips span{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:.9rem;color:var(--muted)}.chips svg{color:var(--gold)}
+.arch{position:relative;aspect-ratio:4/5.2;border-radius:999px 999px 24px 24px;overflow:hidden;background:var(--wine);box-shadow:var(--sh);animation:up 1.1s .1s both}
+.arch svg.art,.arch .pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame{position:absolute;inset:-14px;border:1px solid var(--gold);border-radius:999px 999px 36px 36px;pointer-events:none;opacity:.7}
+.stamp{position:absolute;right:-.5rem;bottom:2.2rem;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:.9rem 1.2rem;box-shadow:var(--sh);font-size:.9rem;color:var(--muted);animation:up 1s .5s both}
+.stamp b{display:block;font:600 1.3rem var(--fd);color:var(--wine)}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.hero .eyebrow,.hero h1,.hero .lead,.hero .btns,.chips{animation:up 1s both}.hero h1{animation-delay:.1s}.hero .lead{animation-delay:.2s}.hero .btns{animation-delay:.3s}.chips{animation-delay:.4s}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:3rem}.arch{max-width:420px;margin:0 auto;width:calc(100% - 28px)}.stamp{right:-14px}}
+/* como funciona */
+.alt{background:var(--paper)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.step{padding:2rem 1.6rem;border:1px solid var(--line);border-radius:22px;background:var(--cream);position:relative;transition:transform .35s,box-shadow .35s}
+.step:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.step .n{font:500 3.4rem/1 var(--fd);color:var(--gold);opacity:.7}.step svg{position:absolute;right:1.5rem;top:1.7rem;color:var(--rose);width:1.7rem;height:1.7rem}
+.step h3{font:600 1.55rem/1.1 var(--fd);color:var(--wine);margin:1rem 0 .6rem}.step p{color:var(--muted);font-size:.98rem}
+@media(max-width:980px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:560px){.steps{grid-template-columns:1fr}}
+/* serviços */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3rem}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:2rem 1.8rem;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.cat:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+.cat.big{grid-column:span 2;grid-row:span 2;background:var(--wine);color:#fbeee6;border-color:var(--wine)}
+:root[data-theme="dark"] .cat.big{background:#4a1a2a;color:#fbeee6}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .cat.big{background:#4a1a2a;color:#fbeee6}}
+.cat .num{font:500 .85rem var(--fb);letter-spacing:.25em;color:var(--gold)}
+.cat h3{font:500 2rem/1.05 var(--fd);margin:.5rem 0 1.1rem;color:var(--wine)}.cat.big h3{color:#fff;font-size:2.7rem}
+.cat li{padding:.5rem 0;border-bottom:1px dashed var(--line);font-size:.98rem;display:flex;gap:.6rem;align-items:baseline}
+.cat li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);flex:none;transform:translateY(-3px)}
+.cat.big ul{columns:2;column-gap:2.2rem}.cat.big li{border-color:rgba(255,255,255,.18);break-inside:avoid}
+.tag{display:inline-block;margin-top:1.1rem;padding:.4rem .9rem;border-radius:999px;background:var(--gold);color:#2b1620;font:600 .78rem var(--fb);letter-spacing:.1em;text-transform:uppercase}
+.cat .btn{margin-top:1.4rem;min-height:46px;padding:.6rem 1.4rem}
+@media(max-width:980px){.svc{grid-template-columns:1fr 1fr}.cat.big{grid-column:span 2;grid-row:auto}}
+@media(max-width:620px){.svc{grid-template-columns:1fr}.cat.big{grid-column:auto}.cat.big ul{columns:1}}
+/* galeria */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:1rem;margin-top:3rem}
+.tile{position:relative;border-radius:24px;overflow:hidden;display:flex;align-items:flex-end;padding:1.2rem;background:var(--cream2);border:1px solid var(--line);transition:transform .4s}
+.tile:hover{transform:scale(1.02)}.tile .pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile svg.art{position:absolute;right:-8%;top:-4%;width:70%;color:var(--rose);opacity:.35}
+.tile span{position:relative;font:500 1.5rem/1.05 var(--fd);color:var(--wine);z-index:1}.tile.has span{color:#fff;text-shadow:0 2px 12px #0008}
+.tile:nth-child(1){grid-column:span 2;grid-row:span 2;background:var(--wine)}.tile:nth-child(1) span{color:#fff;font-size:2.6rem}.tile:nth-child(1) svg.art{color:var(--gold);opacity:.5}
+.tile:nth-child(4){grid-row:span 2}.tile:nth-child(5){background:var(--rose)}.tile:nth-child(5) span{color:#fff}.tile:nth-child(5) svg.art{color:#fff}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.tile:nth-child(1){grid-column:span 2;grid-row:span 2}.tile:nth-child(1) span{font-size:2rem}}
+/* diferenciais */
+.dif{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border-top:1px solid var(--line)}
+.dif div{padding:2rem 1.6rem 1rem 0}.dif svg{color:var(--rose);width:2rem;height:2rem}.dif h3{font:600 1.5rem var(--fd);color:var(--wine);margin:.9rem 0 .4rem}.dif p{color:var(--muted);font-size:.98rem}
+.note{margin-top:2rem;color:var(--muted);font-size:.85rem}
+@media(max-width:900px){.dif{grid-template-columns:1fr 1fr}}@media(max-width:520px){.dif{grid-template-columns:1fr}}
+/* depoimentos */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3rem}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:2rem}
+.q .mark{font:500 4rem/.6 var(--fd);color:var(--gold)}.q p{font:500 1.35rem/1.35 var(--fd);margin:.6rem 0 1.4rem}
+.q footer,.q .who{display:flex;gap:.8rem;align-items:center;color:var(--muted);font-size:.9rem}.who i{width:42px;height:42px;border-radius:50%;background:var(--wine);color:var(--cream);display:grid;place-items:center;font:600 1.1rem var(--fd);font-style:normal}
+:root[data-theme="dark"] .who i{color:#2b1620}
+.q em{display:block;font-style:normal;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+@media(max-width:900px){.quotes{grid-template-columns:1fr}}
+/* contato */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
+.panel{background:var(--wine);color:#fbeee6;border-radius:30px;padding:clamp(1.8rem,4vw,3rem);box-shadow:var(--sh)}
+:root[data-theme="dark"] .panel{background:#4a1a2a}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .panel{background:#4a1a2a}}
+.panel h3{font:500 2rem var(--fd);color:#fff}.panel .row{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.16)}.panel .row svg{color:var(--gold);margin-top:.2rem}
+.panel .row b{display:block;font-weight:500}.panel .row span{opacity:.82;font-size:.96rem}
+.ex{display:inline-block;font:500 .68rem var(--fb);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:.12rem .6rem;margin-left:.5rem;vertical-align:middle}
+.panel .btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}.panel .btn{background:var(--gold);border-color:var(--gold);color:#2b1620}.panel .btn.o{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.hours li{display:flex;justify-content:space-between;padding:.9rem 0;border-bottom:1px dashed var(--line)}.hours li b{font-weight:500}.hours .off{color:var(--muted)}
+.todo{margin-top:1.4rem;padding:1.2rem 1.4rem;border-radius:18px;background:var(--paper);border:1px solid var(--line);color:var(--muted);font-size:.95rem}
+@media(max-width:900px){.contact{grid-template-columns:1fr}}
+/* footer */
+footer.f{background:var(--wine);color:#f1dcd2;padding:4rem 0 2rem}
+:root[data-theme="dark"] footer.f{background:#150a0f}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) footer.f{background:#150a0f}}
+footer.f .g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem}.f .logo{color:#fff}.f .logo svg{color:var(--gold)}.f p,.f li{opacity:.82;font-size:.95rem}
+.f h4{font:500 .75rem var(--fb);letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin:0 0 1rem}.f li{padding:.25rem 0}.f a:hover{color:var(--gold)}
+.f small{display:block;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15);opacity:.65}
+@media(max-width:800px){footer.f .g{grid-template-columns:1fr 1fr}}@media(max-width:520px){footer.f .g{grid-template-columns:1fr}}
+.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:55;width:60px;height:60px;border-radius:50%;background:#1f9d57;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .25s}
+.wa:hover{transform:scale(1.1)}.wa svg{width:30px;height:30px;fill:#fff;stroke:none}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="sun" viewBox="0 0 48 48"><path d="M8 34a16 16 0 0 1 32 0M24 6v6M9 14l4 4M39 14l-4 4M3 34h6M39 34h6M8 42h32" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.500 2"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-5.700-7-11a7 7 0 0 1 14 0c0 5.300-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></symbol>
+<symbol id="walk" viewBox="0 0 24 24"><circle cx="13" cy="4.500" r="1.800"/><path d="M9 21l2.500-6-2-3 1.500-4 3 2 3 1M11.500 15l3 2 1 4M10 8L7 11"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+<symbol id="tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.500" cy="8.500" r="1.200"/></symbol>
+<symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.800 5.200L19 10l-5.200 1.800L12 17l-1.800-5.200L5 10l5.200-1.800z"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></symbol>
+<symbol id="grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="scissors" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="16" cy="46" r="8"/><circle cx="16" cy="18" r="8"/><path d="M22 22l36 28M22 42L58 14"/></g></symbol>
+<symbol id="polish" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="30" width="24" height="26" rx="8"/><path d="M26 30v-8h12v8M29 22V8h6v14"/></g></symbol>
+<symbol id="brow" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 30c10-14 30-16 52-2M12 46c8-8 24-10 40-2"/></g></symbol>
+<symbol id="comb" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><rect x="6" y="18" width="52" height="12" rx="4"/><path d="M12 30v14M20 30v14M28 30v14M36 30v14M44 30v14M52 30v14"/></g></symbol>
+</defs></svg>
+
+<header id="hd"><div class="wrap nav">
+<a class="logo" href="#topo"><svg><use href="#sun"/></svg><span><small>Studio</small>Aurora</span></a>
+<nav aria-label="Principal"><ul id="menu"><li><a href="#como">Como funciona</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#depoimentos">Clientes</a></li><li><a href="#contato">Contato</a></li></ul></nav>
+<div class="hr"><button class="ib" id="th" aria-label="Alternar tema claro e escuro">◐</button><a class="btn p wl" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#phone"/></svg>WhatsApp</a><button class="ib bg" id="bg" aria-label="Abrir menu" aria-expanded="false">☰</button></div>
+</div></header>
+
+<main id="topo">
+<section class="hero"><div class="wrap">
+<div>
+<div class="eyebrow">Cabelo · Unhas · Estética</div>
+<h1>Studio Aurora<em>Seu momento de brilhar.</em></h1>
+<p class="lead">Um salão para cuidar de você com técnica, carinho e atenção a cada detalhe. Aqui o atendimento é por ordem de chegada, de segunda a sábado.</p>
+<div class="btns"><a class="btn p wl" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#phone"/></svg>Falar no WhatsApp</a><a class="btn o" href="#servicos">Conhecer serviços</a></div>
+<div class="chips"><span><svg class="i"><use href="#clock"/></svg>Segunda a sábado</span><span><svg class="i"><use href="#walk"/></svg>Ordem de chegada</span><span><svg class="i"><use href="#grid"/></svg>6 categorias de serviços</span></div>
+</div>
+<div style="position:relative"><div class="arch" id="arch">
+<svg class="art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="520" fill="#5a1a2e"/><g stroke="#b8955a" stroke-width="1.300" fill="none" opacity=".55"><circle cx="200" cy="330" r="70"/><circle cx="200" cy="330" r="110"/><circle cx="200" cy="330" r="150"/><circle cx="200" cy="330" r="190"/><circle cx="200" cy="330" r="230"/></g><g stroke="#e9a79b" stroke-width="2" stroke-linecap="round" opacity=".6"><path d="M200 330V90M200 330L60 150M200 330L340 150M200 330L22 270M200 330L378 270"/></g><circle cx="200" cy="330" r="62" fill="#b4554f"/><circle cx="200" cy="330" r="62" fill="none" stroke="#e8cf9f" stroke-width="2"/><rect y="330" width="400" height="190" fill="#3f1121"/><path d="M0 330h400" stroke="#b8955a" stroke-width="2"/><g stroke="#b8955a" stroke-width="1" opacity=".5"><path d="M0 360h400M0 395h400M0 440h400"/></g></svg></div><div class="frame"></div>
+<div class="stamp"><b>Seg – Sáb</b>atendimento por ordem de chegada</div></div>
+</div></section>
+
+<section id="como" class="alt"><div class="wrap">
+<div class="eyebrow rv">Como funciona</div><h2 class="rv">Chegou, <em>foi atendida.</em></h2>
+<p class="lead rv">Atendimento por ordem de chegada: o tempo de espera varia conforme o movimento do dia. Para alguns serviços, o agendamento é necessário.</p>
+<div class="steps">
+<div class="step rv"><span class="n">01</span><svg class="i"><use href="#walk"/></svg><h3>Ordem de chegada</h3><p>Sem agendamento para a maioria dos serviços. Você é atendida conforme a ordem em que chega.</p></div>
+<div class="step rv"><span class="n">02</span><svg class="i"><use href="#clock"/></svg><h3>Segunda a sábado</h3><p>Abrimos de segunda a sábado. Consulte os horários completos na seção de contato.</p></div>
+<div class="step rv"><span class="n">03</span><svg class="i"><use href="#cal"/></svg><h3>Alguns serviços pedem agendamento</h3><p>Esmaltação em gel e podologia precisam ser agendadas pelo WhatsApp.</p></div>
+<div class="step rv"><span class="n">04</span><svg class="i"><use href="#tag"/></svg><h3>Valores no salão</h3><p>Para saber o valor de cada serviço, fale conosco no WhatsApp ou pergunte na recepção.</p></div>
+</div></div></section>
+
+<section id="servicos"><div class="wrap">
+<div class="eyebrow rv">Serviços</div><h2 class="rv">Tudo para cuidar de você, <em>em um só lugar.</em></h2>
+<p class="lead rv">Seis categorias para cabelo, unhas e estética.</p>
+<div class="svc" id="svc"></div>
+</div></section>
+
+<section id="galeria" class="alt"><div class="wrap">
+<div class="eyebrow rv">Galeria</div><h2 class="rv">Cabelo, unhas, <em>olhar e pele.</em></h2>
+<p class="lead rv">Uma amostra do que fazemos no dia a dia do Studio Aurora.</p>
+<div class="gal" id="gal"></div>
+</div></section>
+
+<section id="diferenciais"><div class="wrap">
+<div class="eyebrow rv">Diferenciais</div><h2 class="rv">Por que escolher <em>o Studio Aurora</em></h2>
+<div class="dif">
+<div class="rv"><svg class="i"><use href="#walk"/></svg><h3>Sem hora marcada</h3><p>Atendimento por ordem de chegada para a maior parte dos serviços.</p></div>
+<div class="rv"><svg class="i"><use href="#grid"/></svg><h3>Tudo em um lugar</h3><p>Cabelo, unhas, design e estética reunidos no mesmo salão.</p></div>
+<div class="rv"><svg class="i"><use href="#shield"/></svg><h3>Garantia de 10 dias</h3><p>Categoria de alisamentos com garantia de 10 dias, conforme condições informadas no salão.</p></div>
+<div class="rv"><svg class="i"><use href="#clock"/></svg><h3>De segunda a sábado</h3><p>Seis dias por semana para encaixar o cuidado na sua rotina.</p></div>
+</div>
+<p class="note">Conteúdo demonstrativo: textos de exemplo para apresentação do projeto.</p>
+</div></section>
+
+<section id="depoimentos" class="alt"><div class="wrap">
+<div class="eyebrow rv">Clientes</div><h2 class="rv">O que dizem <em>de nós</em></h2>
+<div class="quotes">
+<div class="q rv"><div class="mark">“</div><p>Espaço reservado para o depoimento de uma cliente real do salão.</p><div class="who"><i>A</i><div>Nome da cliente<em>Exemplo demonstrativo</em></div></div></div>
+<div class="q rv"><div class="mark">“</div><p>Aqui entram as avaliações verdadeiras, copiadas do Google ou coletadas no salão.</p><div class="who"><i>B</i><div>Nome da cliente<em>Exemplo demonstrativo</em></div></div></div>
+<div class="q rv"><div class="mark">“</div><p>Cada card tem foto opcional, nome e serviço realizado. Basta substituir o texto.</p><div class="who"><i>C</i><div>Nome da cliente<em>Exemplo demonstrativo</em></div></div></div>
+</div>
+<p class="note">As avaliações acima são exemplos para demonstração, não depoimentos reais.</p>
+</div></section>
+
+<section id="contato"><div class="wrap contact">
+<div class="panel rv"><div class="eyebrow" style="color:var(--gold)">Contato</div><h3 style="margin:.8rem 0 1rem;font-size:2.6rem">Venha nos visitar</h3>
+<div class="row"><svg class="i"><use href="#pin"/></svg><div><b>Rua das Acácias, 480 <span class="ex">Dado de exemplo</span></b><span>Centro, Campinas – SP</span></div></div>
+<div class="row"><svg class="i"><use href="#phone"/></svg><div><b>(19) 90000-0000 <span class="ex">Dado de exemplo</span></b><span>WhatsApp</span></div></div>
+<div class="row"><svg class="i"><use href="#clock"/></svg><div><b>Segunda a sábado</b><span>Veja os horários ao lado</span></div></div>
+<div class="btns"><a class="btn wl" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#phone"/></svg>Chamar no WhatsApp</a><a class="btn o ml" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>Abrir no mapa</a></div></div>
+<div class="rv"><div class="eyebrow">Horários</div><h2 style="font-size:clamp(2rem,4vw,3rem)">Quando <em>atendemos</em></h2>
+<ul class="hours"><li><b>Segunda a sexta</b><span>08h às 20h</span></li><li><b>Sábado</b><span>08h às 20h</span></li><li><b>Domingo</b><span class="off">Fechado</span></li></ul>
+<p class="todo">Endereço, telefone e horários são dados de exemplo desta demonstração. Para usar no seu salão, altere o bloco <code>CONFIG</code> no fim do arquivo.</p></div>
+</div></section>
+</main>
+
+<footer class="f"><div class="wrap"><div class="g">
+<div><a class="logo" href="#topo"><svg><use href="#sun"/></svg><span><small>Studio</small>Aurora</span></a><p style="margin-top:1rem;max-width:30ch">Cabelo, unhas e estética por ordem de chegada.</p></div>
+<div><h4>Navegação</h4><ul><li><a href="#como">Como funciona</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li></ul></div>
+<div><h4>Contato</h4><ul><li>Rua das Acácias, 480</li><li>Centro, Campinas – SP</li><li>(19) 90000-0000</li><li>(dados de exemplo)</li></ul></div>
+<div><h4>Horários</h4><ul><li>Seg a sáb: 08h às 20h</li><li>Domingo: fechado</li></ul></div>
+</div><small>© 2026 Studio Aurora. Todos os direitos reservados. Site demonstrativo com empresa fictícia.</small></div></footer>
+<a class="wa wl" href="#" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.600 15L2 22l5.200-1.400A10 10 0 1 0 12 2zm5.800 14.200c-.2.700-1.400 1.300-1.900 1.300-.5.100-1.100.100-1.800-.1-1.700-.6-3.800-1.800-5.400-4-1.300-1.800-1.400-3.200-.9-4.200.3-.6.800-1 1.300-1h.4c.2 0 .4.100.5.400l.8 1.900c.1.200 0 .4-.1.600l-.5.700c.7 1.300 1.700 2.200 3 2.800l.7-.9c.2-.2.400-.2.600-.1l1.900.9c.3.100.4.300.3.700z"/></svg></a>
+
+<script>
+/* CONFIG: edite aqui os dados do salão */
+var CONFIG={phone:"5519900000000",address:"Rua das Acácias, 480, Campinas SP",msg:"Olá! Vim pelo site do Studio Aurora."};
+/* Fotos opcionais: se o arquivo existir, ele cobre o espaço automaticamente */
+var PHOTOS={hero:"img/hero.jpg",gal:["img/galeria1.jpg","img/galeria2.jpg","img/galeria3.jpg","img/galeria4.jpg","img/galeria5.jpg","img/galeria6.jpg"]};
+var wa="https://wa.me/"+CONFIG.phone+"?text="+encodeURIComponent(CONFIG.msg),mp="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(CONFIG.address);
+document.querySelectorAll(".wl").forEach(function(a){a.href=wa});document.querySelectorAll(".ml").forEach(function(a){a.href=mp});
+var SV=[["Combos Aurora",["Corte feminino","Corte + hidratação","Corte + escova (brinde hidratação)","Trança box","Lavagem especial + escova","Escova simples","Escova + hidratação","Escova modelada com chapinha","Escova + matização","Retoque de raiz (tinta da cliente)","Retoque de raiz + escova","Nutrição vegana + escova","Máscara reconstrutora + escova","Cauterização + escova","Mechas e luzes"],"big"],
+["Alisamentos clássicos",["Botox capilar (com ou sem formol)","Selagem térmica","Alisamento em gel","Plástica dos fios","Alisamento liso total","Alisamento reconstrutor","Alisamento orgânico vegano","Alisamento orgânico premium"]],
+["Alisamento com garantia",["Alisamento blindagem","Alisamento Gold","Alisamento semi definitivo","Alisamento orgânico express","Alisamento profissional Pro"],"","Garantia de 10 dias"],
+["Adicionais",["Taxa para cabelo com mega hair","Tubo de tinta do salão","Adicional de chapinha"]],
+["Unhas",["Pé e mão","Pé ou mão","Esmaltação em gel (agendar)","Podologia (agendar)"]],
+["Design e estética",["Buço ou queixo","Axila","Meia perna","Perna inteira","Virilha completa"]]];
+var sv=document.getElementById("svc");
+SV.forEach(function(s,i){var d=document.createElement("article");d.className="cat rv"+(s[2]?" "+s[2]:"");
+ d.innerHTML='<span class="num">0'+(i+1)+'</span><h3></h3><ul></ul>';d.querySelector("h3").textContent=s[0];
+ s[1].forEach(function(t){var l=document.createElement("li");l.textContent=t;d.querySelector("ul").appendChild(l)});
+ if(s[3]){var t=document.createElement("span");t.className="tag";t.textContent=s[3];d.appendChild(t)}
+ if(i===0){var b=document.createElement("a");b.className="btn";b.style.cssText="background:var(--gold);border-color:var(--gold);color:#2b1620";b.href=wa;b.target="_blank";b.rel="noopener";b.textContent="Perguntar valores no WhatsApp";d.appendChild(b)}
+ sv.appendChild(d)});
+var G=[["scissors","Cortes e escovas"],["polish","Unhas"],["brow","Design de sobrancelhas"],["comb","Tratamentos"],["spark","Alisamentos"],["scissors","Mechas e cor"]];
+var gal=document.getElementById("gal");
+G.forEach(function(g,i){var t=document.createElement("div");t.className="tile rv";t.innerHTML='<svg class="art" viewBox="0 0 64 64" aria-hidden="true"><use href="#'+g[0]+'"/></svg><span></span>';t.querySelector("span").textContent=g[1];gal.appendChild(t);
+ attach(t,PHOTOS.gal[i],g[1])});
+function attach(box,src,alt){var im=new Image();im.onload=function(){im.className="pic";im.alt=alt;box.insertBefore(im,box.firstChild);box.classList.add("has")};im.src=src}
+attach(document.getElementById("arch"),PHOTOS.hero,"Studio Aurora");
+var hd=document.getElementById("hd");function sc(){hd.classList.toggle("sc",scrollY>20)}addEventListener("scroll",sc,{passive:true});sc();
+var menu=document.getElementById("menu"),bg=document.getElementById("bg");
+bg.onclick=function(){var o=menu.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+menu.onclick=function(e){if(e.target.tagName==="A"){menu.classList.remove("open");bg.setAttribute("aria-expanded",false)}};
+var dk=matchMedia("(prefers-color-scheme: dark)").matches;document.getElementById("th").onclick=function(){dk=!dk;document.documentElement.setAttribute("data-theme",dk?"dark":"light")};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el,i){el.style.transitionDelay=(i%3)*100+"ms";io.observe(el)});
+var links=[].slice.call(menu.querySelectorAll("a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-45% 0px -50% 0px"});
+secs.forEach(function(s){s&&so.observe(s)});
+</script>
+</body>
+</html>
